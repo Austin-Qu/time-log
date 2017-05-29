@@ -1,9 +1,9 @@
 ## Overtime
 
-#models
+# models
 - Post -> date:date, rationale:text
 - User -> Devise
 - AdminUser ->STI
 
-#UI
+# UI
 - Bootstrap
