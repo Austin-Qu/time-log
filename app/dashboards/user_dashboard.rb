@@ -32,7 +32,6 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :posts,
-    :id,
     :email,
     :type,
   ].freeze
@@ -41,9 +40,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :posts,
-    :id,
     :email,
-    :remember_created_at,
     :sign_in_count,
     :current_sign_in_at,
     :last_sign_in_at,
