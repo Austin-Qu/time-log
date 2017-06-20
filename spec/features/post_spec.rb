@@ -20,11 +20,20 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      # build_stubbed to avoid hitting database
-      post1 = FactoryGirl.build_stubbed(:post)
-      post2 = FactoryGirl.build_stubbed(:second_post)
+      # build_stubbed to avoid hitting database, create to see real page effect
+      post1 = FactoryGirl.create(:post)
+      post2 = FactoryGirl.create(:second_post)
       visit posts_path
       expect(page).to have_content(/Rationale|content/)
+    end
+
+    it 'has a scope so that only post creators can see their posts' do
+      # build_stubbed to avoid hitting database
+      post1 = FactoryGirl.create(:post, user: @user)
+      post2 = FactoryGirl.create(:second_post, user: @user)
+      post_from_another_user = FactoryGirl.create(:post_from_another_user)
+      visit posts_path
+      expect(page).to_not have_content(/other/)
     end
   end
 
@@ -39,7 +48,7 @@ describe 'navigate' do
 
   describe 'delete' do
     it 'can be deleted' do
-      post = FactoryGirl.create(:post)
+      post = FactoryGirl.create(:post, user: @user)
       visit posts_path
 
       click_link("delete_post_#{post.id}_from_index")
