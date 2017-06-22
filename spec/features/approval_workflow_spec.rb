@@ -25,5 +25,17 @@
        visit edit_post_path(@post)
        expect(page).to_not have_content('Approved')
      end
+
+     it 'should not be editable after post got approved' do
+       logout(:user)
+       user = FactoryGirl.create(:user)
+       login_as(user, :scope => :user)
+
+       @post.update(user_id: user.id, status: 'approved')
+
+       #revisit page after updating status
+       visit edit_post_path(@post)
+       expect(page.current_path).to eq(root_path)
+     end
    end
  end
