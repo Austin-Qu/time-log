@@ -10,7 +10,7 @@
                     password_confirmation: "qweqweqqwe",
                     first_name:'qwe',
                     last_name:'sdf',
-                    phone: '61452198717')
+                    phone: '0452198717')
 
 puts "1 user has been created"
 
@@ -19,7 +19,7 @@ AdminUser.create(email: "anxing.qu@gmail.com",
                  password_confirmation: "wewewe",
                  first_name:'Anxing',
                  last_name:'Qu',
-                 phone: '61452198717')
+                 phone: '0452198717')
 
 puts "1 admin user has been created"
 
