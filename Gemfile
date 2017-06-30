@@ -42,6 +42,7 @@ gem 'administrate', '~> 0.7.0'
 gem "bourbon"
 gem 'pundit', '~> 1.1'
 gem 'twilio-ruby', '~> 4.13'
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
