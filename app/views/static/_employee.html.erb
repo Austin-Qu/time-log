@@ -1,1 +1,8 @@
-<h1>Employee</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="well employee-blocks">
+      <h3>Pending Your Confirmation</h3>
+      <%= render 'pending_audit_confirmations', pending_audit_confirmations: @pending_audit_confirmations %>
+    </div>
+  </div>
+</div>
