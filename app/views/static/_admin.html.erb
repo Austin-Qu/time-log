@@ -1,10 +1,17 @@
 <div class="container-fluid">
   <div class="pending-homepage row">
+    <h2>Items Pending Your Approval</h2>
+    <hr>
     <%= render 'pending_approval', pending_approvals: @pending_approvals %>
   </div>
-</div>
-<div class="pending-homepage">
-  <div class="homepage-block">
-    <p>33333</p>
+  <div class="pending-homepage row">
+    <h2>Confirmation Log</h2>
+    <hr>
+    <%= render 'confirmation_log', recent_audit_items: @recent_audit_items %>
+    <hr>
+    <div class="clearfix">
+
+    </div>
+    <%= link_to 'View All Items', audit_logs_path, class: 'btn btn-primary' %>
   </div>
 </div>
